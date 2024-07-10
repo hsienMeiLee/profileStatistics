@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Statistics</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="stats-container">
+        <i class="fa-solid fa-bag-shopping icon"></i>
+        <h4 class="counter" data-ceil="15">15</h4>
+        <h5>Years of experience</h5>
+    </div>
+    <div class="stats-container">
+        <i class="fa-solid fa-cloud icon"></i>
+        <h4 class="counter" data-ceil="270">270</h4>
+        <h5>Websites made</h5>
+    </div>
+    <div class="stats-container">
+        <i class="fa-brands fa-apple icon"></i>
+        <h4 class="counter" data-ceil="27">27</h4>
+        <h5>Apps completed</h5>
+    </div>
+
+    <script src="https://kit.fontawesome.com/15a7c40b2c.js" crossorigin="anonymous"></script>
+    <script>
+        const counterEls = document.querySelectorAll(".counter");
+        counterEls.forEach((counterEl)=>{
+            counterEl.innerText = "0";
+            incrementCounter();
+
+            function incrementCounter(){
+                let currentNum = +counterEl.innerText;
+                const dataCeil = counterEl.getAttribute("data-ceil");
+                const increment = dataCeil / 15;
+                currentNum = Math.ceil(currentNum + increment);
+
+                if(currentNum<dataCeil){
+                    counterEl.innerText = currentNum;
+                    setTimeout(incrementCounter,50)
+                }else{
+                    counterEl.innerText = dataCeil;
+                }
+                
+            }
+        })
+    </script>
+</body>
+</html>

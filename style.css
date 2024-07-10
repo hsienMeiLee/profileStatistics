@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: yellow;
+    font-family: cursive;
+}
+
+.stats-container{
+    margin: 20px;
+    border: dotted green;
+    min-width: 200px;
+    height: 100px;
+    position: relative;
+    padding: 20px;
+}
+
+@media (max-width:500px){
+    body{
+        flex-direction: column;
+    }
+}
+
+.icon{
+    position: absolute;
+    font-size: 4rem;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.counter{
+    font-size: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    color: green;
+}
+
+.stats-container h4{
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
